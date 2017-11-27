@@ -16,7 +16,7 @@ var express = require('express');
 
 var app = express();
 var server = require('http').Server(app);
-var io = require('socket.io').listen(server);
+//var io = require('socket.io').listen(server);
 var port = process.env.PORT || 1337;
 
 var path = require('path');
