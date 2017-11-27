@@ -5,6 +5,9 @@
     "private": true,
     "license": "MIT",
     "author": "Microsoft",
+     "dependencies": {
+    "express": "latest"
+  },
     "engines": {
         "node": ">=6.9.1"
     },
