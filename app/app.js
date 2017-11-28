@@ -4,9 +4,10 @@
 angular.module('myApp', [
   'ui.router',
   'ngRoute',
-  'myApp.view1',
+  'myApp.mainModule', 
   'myApp.view2',
   'myApp.searchView',
+  'myApp.singleBlog',
   'myApp.version',
   'myApp.rightNavView'
 ])
@@ -14,14 +15,16 @@ angular.module('myApp', [
   //$locationProvider.hashPrefix('!');
  $routeProvider.when('/about', {
     templateUrl: 'about.html'
-  }).when('/main', {
-      templateUrl: 'single.html'
+  })
+  .when('/main', {
+      templateUrl: 'mainContent.html',
+      controller: 'mainController'
     })
     .when('/contact', {
       templateUrl: 'contact.html'
     })
-    .when('/main/view1', {
-      templateUrl: 'view1/view1.html'
+    .when('/main/singleBlog', {
+      templateUrl: 'singleBlog/singleBlog.html'
     })
      .when('/main/view2', {
       templateUrl: 'view2/view2.html'
@@ -48,12 +51,12 @@ angular.module('myApp', [
                 }
             }
         })
-        .state('main.view1', {
-            url: "/view1",
+        .state('main.singleBlog', {
+            url: "/singleBlog",
            //abstract:true ,
             views: {
            "mainView" :{
-                    templateUrl: 'view1/view1.html'
+                    templateUrl: 'singleBlog/singleBlog.html'
                 }
             }
         })
