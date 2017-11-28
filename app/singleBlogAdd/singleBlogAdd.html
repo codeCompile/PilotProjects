@@ -1,0 +1,39 @@
+<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+<script src="https://gist.github.com/codeCompile/ff2f8b0c42ee520e20661ec08a1d8bc8.js"></script>
+ <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; 
+                color: #000000; background-color: #eee;
+                font-size: 12px; border: 1px dashed #999999;
+                line-height: 14px; padding: 5px; 
+                overflow: auto; width: 100%">
+       <code style="color:#000000;word-wrap:normal;">
+
+          'use strict';
+
+describe('myApp.view2 module', function() {
+
+  beforeEach(module('myApp.view2'));
+
+  describe('view2 controller', function(){
+
+    it('should ....', inject(function($controller) {
+      //spec body
+      var view2Ctrl = $controller('View2Ctrl');
+      expect(view2Ctrl).toBeDefined();
+    }));
+
+  });
+});
+
+       </code>
+ </pre>
+
+<!--<textarea>
+  function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}</textarea>
+    -->

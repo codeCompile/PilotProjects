@@ -8,7 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!--<link rel="icon" href="../../favicon.ico">-->
- <link href="blog.css" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <link href="app.css" rel="stylesheet">
 	<title>Start Blog</title>
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -41,12 +42,15 @@
   <script src="components/autoSuggest/autoSuggestService.js"></script>
   <script src="searchView/search.js"></script>
   <script src="singleBlog/singleBlog.js"></script>
-  <script src="view2/view2.js"></script>  
+  <script src="singleBlogAdd/singleBlogAdd.js"></script>  
    <script src="mainController.js"></script>
   <script src="rightNav/rightNav.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+	<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
 </head>
 <body>
 <!---header---->	
@@ -59,7 +63,8 @@
 						<a class="blog-nav-item" href="#/contact">CONTACT</a>
 						<a class="blog-nav-item" href="#/about">ABOUT</a>
 				 		<a class="blog-nav-item" ui-sref="main.singleBlog">view1</a>
-    					<a class="blog-nav-item" ui-sref="main.view2">view2</a>
+    					<a class="blog-nav-item" ui-sref="main.singleBlogAdd">view2</a>
+										<a class="blog-nav-item" href="editorSection/editorSection.html">Edit</a>
         </nav>
       </div>
     </div>
@@ -70,7 +75,6 @@
         <h1 class="blog-title">The Bootstrap Blog</h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
-
 					<!--<script>
 					$("span.menu").click(function(){
 					$(".top-menu ul").slideToggle("slow" , function(){
@@ -78,20 +82,6 @@
 					});
 					</script>-->
 				<!---//End-top-nav---->				
-
-<!--/header-->
-		   <!--<div class="row">
-
-        <div class="col-sm-8 blog-main">
- <div ng-view ></div>
-  <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
-        </div>
-		   </div>-->
 
 <div class="content">
 	<div class="container">

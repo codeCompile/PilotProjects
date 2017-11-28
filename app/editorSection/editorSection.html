@@ -1,0 +1,60 @@
+
+<!DOCTYPE HTML>
+<html ng-app="editorApp">
+<head>
+	
+	<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../blog.css" rel="stylesheet">
+  <link href="../app.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="editorSection.js"></script> 
+<script src="../components/ckeditor_4.7.3_full/ckeditor/ckeditor.js"></script>
+
+</head>
+<body>
+     <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+			<a class="blog-nav-item active" href="../index.html">HOME</a>
+        </nav>
+      </div>
+    </div><div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Editing Section</h1>
+        <p class="lead blog-description">Edit or create a blog.</p>
+      </div>
+			 <div class="contact-details" ng-controller="blogEditorController">				 
+			 <form>
+				 Enter the title <input type="text" placeholder="BlogTitle" required value="Ways to create a new id for every entry">
+				 <br/><input type="text" placeholder="Email" required ng-model="currentformattedTime"/>
+				 <input type="text" placeholder="UserName" />
+				 <!--<textarea placeholder="Message"></textarea>-->
+                  <textarea id="editor1" class="ckeditor" ng-model="blogAllText" placeholder="Message" name="editor1" cols="80" rows="100">
+            <p>Hello <strong>CKEditor</strong></p>
+        </textarea>
+				 <input type="submit" value="SEND"/>
+			 </form>
+                 <script>
+ 
+       // Replace the <textarea id="editor1"> with an CKEditor
+       // instance, using default configurations.
+       CKEDITOR.replace( 'editor1', {
+           uiColor: '#14B8C4'
+        //    toolbar: [
+        //        [ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink' ],
+        //        [ 'FontSize', 'TextColor', 'BGColor' ]
+        //    ]
+       });
+ 
+   </script>
+		</div>
+        </div>
+</body>
+</html>

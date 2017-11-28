@@ -5,7 +5,7 @@ angular.module('myApp', [
   'ui.router',
   'ngRoute',
   'myApp.mainModule', 
-  'myApp.view2',
+  'myApp.singleBlogAdd',
   'myApp.searchView',
   'myApp.singleBlog',
   'myApp.version',
@@ -26,8 +26,9 @@ angular.module('myApp', [
     .when('/main/singleBlog', {
       templateUrl: 'singleBlog/singleBlog.html'
     })
-     .when('/main/view2', {
-      templateUrl: 'view2/view2.html'
+     .when('/main/singleBlogAdd', {
+      templateUrl: 'singleBlogAdd/singleBlogAdd.html',
+      controller: 'singleBlogAddController'
     });
      
   //$routeProvider.otherwise({redirectTo: '/main'});
@@ -60,13 +61,13 @@ angular.module('myApp', [
                 }
             }
         })
-         .state('main.view2', {
-            url: "/view2",
+         .state('main.singleBlogAdd', {
+            url: "/singleBlogAdd",
            //abstract:true ,
             views: {
                 
                 "mainView" :{
-                    templateUrl: 'view2/view2.html'
+                    templateUrl: 'singleBlogAdd/singleBlogAdd.html'
                 }
             }
         })  
