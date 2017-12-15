@@ -1,15 +1,17 @@
 function AppConstants()
 {
-    var baseUrl = 'http://akimotoj.azurewebsites.net/aristoweb/';
-    //var baseUrl = 'http://localhost:8080/aristoweb/';
+    //var baseUrl = 'http://akimotoj.azurewebsites.net/aristoweb/';
+    var baseUrl = 'http://localhost:8080/aristoweb/';
     var serviceUrlForCreatePost = baseUrl + 'api/createpost';    
     var serviceUrlAllBlogs = baseUrl + 'api/posts';
     var selectedPostService = baseUrl + 'api/getpostbyid';
+    var postIdofallPostData = baseUrl + 'api/postsInfo';
     return {
     baseUrl:baseUrl,
     serviceUrlForCreatePost:serviceUrlForCreatePost,
     serviceUrlAllBlogs:serviceUrlAllBlogs,
-    selectedPostService:selectedPostService
+    selectedPostService:selectedPostService,
+    postIdofallPostData:postIdofallPostData
     }
     
 }

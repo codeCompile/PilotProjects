@@ -29,16 +29,23 @@
 
       <div class="blog-header">
         <h1 class="blog-title">Editing Section</h1>
-        <p class="lead blog-description">Edit or create a blog.</p>
+        <p class="lead blog-description">Edit or create a article.</p>
       </div>
-			 <div class="contact-details" ng-controller="blogEditorController">				 
+			 <div class="contact-details" ng-controller="blogEditorController">		
+         Posts: <select ng-model="selectedpostID" ng-change="OnPostSelected()" ng-options ="opt as opt.articleTitle for opt in listOfIdsPosts track by opt.post_ID">
+         </select> <br/>
 			 <form ng-submit="addNewBlogPostAsync()">
-				 Enter the title <input type="text" placeholder="BlogTitle" ng-model="blogTitle" required value="Title: Ways to create a new id for every entry">
+				 Enter the title <input type="text" placeholder="What is it about?" ng-model="blogTitle" required value="Title: Ways to create a new id for every entry">
 				 <br/><input type="text" placeholder="Email" required ng-model="currentformattedTime"/>
-				 <input type="text" placeholder="UserName"  ng-model="blogUserName"/>
-				 <!--<textarea placeholder="Message"></textarea>-->
-                  <textarea id="editor1" class="ckeditor" ng-model="blogAllText" placeholder="Message" name="editor1" cols="80" rows="100">
-            <p>Hello <strong>CKEditor</strong></p>
+				 <input type="text" placeholder="UserName"  ng-model="postUserName"/>
+         Category: <select ng-model="postType" >
+           <option ng-repeat="x in allPostTypes track by x">{{x}}</option>
+         </select>
+          Status: <select ng-model="postStatus" >
+           <option ng-repeat="x in allPostStatus track by x">{{x}}</option>
+         </select>
+				 <textarea id="editor1" class="ckeditor" ng-model="blogAllText" placeholder="Message" name="editor1" cols="80" rows="100">
+         <p>Hello <strong>CKEditor</strong></p>
         </textarea>
 				 <input type="submit" value="SEND"/>
 			 </form>
