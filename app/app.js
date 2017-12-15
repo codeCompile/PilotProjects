@@ -10,12 +10,21 @@ angular.module('myApp', [
   'myApp.singleBlog',
   'myApp.version',
   'myApp.rightNavView'
-])
+]).run([
+        "$state",
+         function($state){
+            $state.go('main');
+         }
+     ])
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   //$locationProvider.hashPrefix('!');
  $routeProvider.when('/about', {
     templateUrl: 'about.html'
   })
+  .when('/', {
+      templateUrl: 'mainContent.html',
+      controller: 'mainController'
+    })
   .when('/main', {
       templateUrl: 'mainContent.html',
       controller: 'mainController'

@@ -18,7 +18,7 @@ angular.module('myApp.singleBlog', ['ui.router'])
         }
     };
 })
-.controller('singleBlogController', function ($scope, autoSuggestService1) {
+.controller('singleBlogController', function ($scope, autoSuggestService1,sharedService) {
     //autoSuggestService.get('s').then(function (data) {
     //    $scope.items = data;
     //});
@@ -27,6 +27,17 @@ angular.module('myApp.singleBlog', ['ui.router'])
     {
         console.log('selected=' + $scope.name);
     }; 
+
+var dataReceived = function(blogDataFlag,blogData)
+{
+    var myEl = angular.element( document.querySelector( '#blogContentArea' ) );
+    myEl.empty();
+//myEl.text('This is text. Here html tags will be displayed like normal tags
+    myEl.html(blogData);
+}
+    
+    sharedService.onUpdateSubscribe($scope,dataReceived);
+
 })
 .directive('singleBlogcontrol', function ($timeout) {
     return {

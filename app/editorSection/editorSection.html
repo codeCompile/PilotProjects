@@ -10,10 +10,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-
-
 <script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="editorSection.js"></script> 
+<script src="../commonLib.js"></script>
 <script src="../components/ckeditor_4.7.3_full/ckeditor/ckeditor.js"></script>
 
 </head>
@@ -31,10 +32,10 @@
         <p class="lead blog-description">Edit or create a blog.</p>
       </div>
 			 <div class="contact-details" ng-controller="blogEditorController">				 
-			 <form>
-				 Enter the title <input type="text" placeholder="BlogTitle" required value="Ways to create a new id for every entry">
+			 <form ng-submit="addNewBlogPostAsync()">
+				 Enter the title <input type="text" placeholder="BlogTitle" ng-model="blogTitle" required value="Title: Ways to create a new id for every entry">
 				 <br/><input type="text" placeholder="Email" required ng-model="currentformattedTime"/>
-				 <input type="text" placeholder="UserName" />
+				 <input type="text" placeholder="UserName"  ng-model="blogUserName"/>
 				 <!--<textarea placeholder="Message"></textarea>-->
                   <textarea id="editor1" class="ckeditor" ng-model="blogAllText" placeholder="Message" name="editor1" cols="80" rows="100">
             <p>Hello <strong>CKEditor</strong></p>
